@@ -48,7 +48,7 @@ def main():
     plt.ylabel('Accuracy')
     plt.xlabel('Epoch')
     plt.legend(['train', 'test'], loc='upper left')
-    plt.show()
+
     plt.savefig('model_accuracy_history.png')
 
     plt.plot(model_history.history['loss'])
@@ -57,7 +57,6 @@ def main():
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['train', 'test'], loc='upper left')
-    plt.show()
 
     plt.savefig('model_loss_history.png')
 
@@ -76,7 +75,7 @@ def main():
 
     names = ['Hueristic','Decision_tree','Random Forest','Neural Network']
     acc  = [hue_accuracy*100,Dtree_accuracy*100,Rtree_accuracy*100,nn_accuracy*100]
-
+    plt.figure()
     plt.bar(names,acc,width=0.4)
     plt.xlabel('Model')
     plt.ylabel('accuracy [%]')
